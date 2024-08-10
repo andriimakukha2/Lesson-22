@@ -11,7 +11,53 @@
 <h1>
   Lorem ipsum dolor sit amet.
 </h1>
-<script src="js/main.js">
+<script type="module">
+    import { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple } from './js/main.js'
+
+    // №1 Counter
+    console.log(counter());    // 0
+    console.log(counter());    // 1
+    console.log(counter(100)); // 100
+    console.log(counter());    // 101
+    console.log(counter());    // 102
+    console.log(counter(500)); // 500
+    console.log(counter());    // 501
+    console.log(counter());    // 502
+    console.log(counter(0));   // 0
+    console.log(counter());    // 1
+    console.log(counter());    // 2
+
+    // #2 counterFactory
+    console.log(counterFactory.value()); // 0
+    counterFactory.increment();
+    counterFactory.increment();
+    counterFactory.increment();
+    console.log(counterFactory.value()); // 3
+    counterFactory.decrement();
+    counterFactory.decrement();
+    console.log(counterFactory.value()); // 1
+    console.log(counterFactory.value(100)); // 100
+    counterFactory.decrement();
+    console.log(counterFactory.value()); // 99
+    console.log(counterFactory.value(200)); // 200
+    counterFactory.increment();
+    console.log(counterFactory.value()); // 201
+
+    // #3 myPow
+
+
+    // #4 myMax
+    const list = [12, 23, 100, 34, 56, 9, 233];
+    console.log(myMax(list)); // 233
+
+    // #5
+    console.log(myDouble(3)) // = myMul(2, 3) = 6
+    console.log(myDouble(4)) // = myMul(2, 4) = 8
+    console.log(myDouble(5)) // = myMul(2, 5) = 10
+
+    console.log(myTriple(3)) // = myMul(3, 3) = 9
+    console.log(myTriple(4)) // = myMul(3, 4) = 12
+    console.log(myTriple(5)) // = myMul(3, 5) = 15
 </script>
 </body>
 </html>
