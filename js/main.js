@@ -1,7 +1,7 @@
 // #1
 
 const counter = (function() {
-    let count = 0;
+    let count = -1;
 
     return function(n) {
         if (typeof n === 'number') {
@@ -55,10 +55,6 @@ const myPow = (a, b, myPrint) => {
 
     return myPrint(a, b, result);
 };
-console.log(myPow(3, 4, myPrint)); // 3^4=81
-console.log(myPow(2, 3, myPrint)); // 2^3=8
-console.log(myPow(2, 0, myPrint)); // 2^0=1
-console.log(myPow(2, -2, myPrint)); // 2^-2=0.25
 
 // #4
 
@@ -78,4 +74,4 @@ const myTriple = myMul.bind(null, 3);
 
 // Export
 
-export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
+export { counter, counterFactory, myPrint, myPow, myMax, myMul, myDouble, myTriple }

@@ -12,7 +12,7 @@
   Lorem ipsum dolor sit amet.
 </h1>
 <script type="module">
-    import { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple } from './js/main.js'
+    import { counter, counterFactory, myPrint, myPow, myMax, myMul, myDouble, myTriple } from './js/main.js'
 
     // №1 Counter
     console.log(counter());    // 0
@@ -45,6 +45,11 @@
 
     // #3 myPow
 
+
+    console.log(myPow(3, 4, myPrint)); // 3^4=81
+    console.log(myPow(2, 3, myPrint)); // 2^3=8
+    console.log(myPow(2, 0, myPrint)); // 2^0=1
+    console.log(myPow(2, -2, myPrint)); // 2^-2=0.25
 
     // #4 myMax
     const list = [12, 23, 100, 34, 56, 9, 233];
