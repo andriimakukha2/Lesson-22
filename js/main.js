@@ -1,18 +1,17 @@
 // #1
 
 const counter = (function() {
-    let count = -1;
+    let count = null; // Ініціалізуємо змінну для збереження значення лічильника
 
     return function(n) {
         if (typeof n === 'number') {
-            count = n;
-        } else {
-            count++;
+            count = n; // Якщо передано число, починаємо з нього
+        } else if (count === null) {
+            count = 0; // Якщо число не передано, і лічильник ще не ініціалізовано, починаємо з 0
         }
-        return count;
+        return count++; // Повертаємо поточне значення і збільшуємо лічильник
     };
 })();
-
 // #2
 
 const counterFactory = (function () {
@@ -40,7 +39,7 @@ const myPrint = (a, b, res) => {
     return `${a}^${b}=${res}`;
 };
 
-const myPow = (a, b, myPrint) => {
+const myPow = (a, b, callback) => {
     const powRecursive = (a, b) => {
         if (b === 0) {
             return 1;
@@ -53,7 +52,7 @@ const myPow = (a, b, myPrint) => {
 
     const result = powRecursive(a, b);
 
-    return myPrint(a, b, result);
+    return callback(a, b, result);
 };
 
 // #4
